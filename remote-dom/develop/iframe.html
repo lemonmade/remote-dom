@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Remote DOM Development</title>
+    <script type="module" src="/environments/iframe.ts"></script>
+    <script type="module">
+      const countElement = document.querySelector('span');
+      let count = Number.parseInt(countElement.textContent, 10);
+
+      setInterval(() => {
+        count += 1;
+        countElement.textContent = String(count);
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    This content was provided by an iframe sandbox! count: <span>0</span>
+  </body>
+</html>

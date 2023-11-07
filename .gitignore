@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+bin/
+
+# Special operating system files
+.DS_STORE
+
+# Temporary files
+*.log

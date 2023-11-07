@@ -1,0 +1,6 @@
+{
+  "extends": "@quilted/craft/typescript/workspace.json",
+  "compilerOptions": {"outDir": "build/typescript"},
+  "include": [],
+  "references": [{"path": "./packages/remote-dom"}, {"path": "./remote-dom"}]
+}

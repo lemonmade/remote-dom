@@ -1,0 +1,20 @@
+{
+  "name": "remote-dom",
+  "type": "module",
+  "exports": {
+    ".": "./remote-dom.ts"
+  },
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js"
+  },
+  "devDependencies": {
+    "@lemonmade/remote-dom": "workspace:*",
+    "@lemonmade/remote-ui": "^0.3.2",
+    "@quilted/threads": "^2.0.0"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ]
+}

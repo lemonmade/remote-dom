@@ -1,0 +1,80 @@
+{
+  "name": "@lemonmade/remote-dom",
+  "type": "module",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "@lemonmade/registry": "https://registry.npmjs.org"
+  },
+  "version": "0.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<USER>/<REPOSITORY>",
+    "directory": "packages/remote-dom"
+  },
+  "exports": {
+    ".": {
+      "types": "./build/typescript/index.d.ts",
+      "quilt:source": "./source/index.ts",
+      "quilt:esnext": "./build/esnext/index.esnext",
+      "import": "./build/esm/index.mjs"
+    },
+    "./elements": {
+      "types": "./build/typescript/elements.d.ts",
+      "quilt:source": "./source/elements.ts",
+      "quilt:esnext": "./build/esnext/elements.esnext",
+      "import": "./build/esm/elements.mjs"
+    },
+    "./environments/iframe": {
+      "types": "./build/typescript/environments/iframe.d.ts",
+      "quilt:source": "./source/environments/iframe.ts",
+      "quilt:esnext": "./build/esnext/environments/iframe.esnext",
+      "import": "./build/esm/environments/iframe.mjs"
+    },
+    "./environments/worker": {
+      "types": "./build/typescript/environments/worker.d.ts",
+      "quilt:source": "./source/environments/worker.ts",
+      "quilt:esnext": "./build/esnext/environments/worker.esnext",
+      "import": "./build/esm/environments/worker.mjs"
+    }
+  },
+  "types": "./build/typescript/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "elements": [
+        "./build/typescript/elements.d.ts"
+      ],
+      "environments/iframe": [
+        "./build/typescript/environments/iframe.d.ts"
+      ],
+      "environments/worker": [
+        "./build/typescript/environments/worker.d.ts"
+      ]
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js"
+  },
+  "dependencies": {
+    "@quilted/threads": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@lemonmade/remote-ui": "^0.3.2"
+  },
+  "peerDependenciesMeta": {
+    "@lemonmade/remote-ui": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@lemonmade/remote-ui": "^0.3.2"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ]
+}

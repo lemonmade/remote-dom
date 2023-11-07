@@ -1,0 +1,33 @@
+{
+  "name": "remote-dom",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "format": "prettier --write --cache .",
+    "lint": "prettier --check --cache .",
+    "test": "vitest",
+    "type-check": "tsc --build --pretty",
+    "typescript:run": "tsx --conditions quilt:source",
+    "typescript:watch": "tsx watch --conditions quilt:source"
+  },
+  "devDependencies": {
+    "@quilted/rollup": "^0.2.6",
+    "@quilted/typescript": "^0.2.21",
+    "@quilted/vite": "^0.1.5",
+    "prettier": "^3.0.0",
+    "rollup": "^4.1.0",
+    "tsx": "^3.14.0",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0",
+    "vitest": "^0.34.0"
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": false,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "packageManager": "pnpm@8.10.2+sha256.487609e857f1c11780cc98dd0bfe4c8a8b11c7f23bc3a4493ac7d263d6fb6c8c"
+}
