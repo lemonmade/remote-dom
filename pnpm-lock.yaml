@@ -17,6 +17,9 @@ importers:
       '@quilted/vite':
         specifier: ^0.1.5
         version: 0.1.5(@babel/template@7.22.15)(preact@10.18.2)(rollup@4.3.0)(vite@4.5.0)(vitest@0.34.6)
+      '@types/node':
+        specifier: ^20.9.0
+        version: 20.9.0
       prettier:
         specifier: ^3.0.0
         version: 3.0.3
@@ -31,7 +34,7 @@ importers:
         version: 5.2.2
       vite:
         specifier: ^4.5.0
-        version: 4.5.0(@types/node@20.8.10)
+        version: 4.5.0(@types/node@20.9.0)
       vitest:
         specifier: ^0.34.0
         version: 0.34.6
@@ -46,17 +49,11 @@ importers:
         specifier: ^0.3.2
         version: 0.3.2(preact@10.18.2)
 
-  remote-dom:
+  packages/remote-dom/run:
     devDependencies:
       '@lemonmade/remote-dom':
         specifier: workspace:*
-        version: link:../packages/remote-dom
-      '@lemonmade/remote-ui':
-        specifier: ^0.3.2
-        version: 0.3.2(preact@10.18.2)
-      '@quilted/threads':
-        specifier: ^2.0.0
-        version: 2.0.0
+        version: link:..
 
 packages:
 
@@ -1870,7 +1867,7 @@ packages:
       '@prefresh/utils': 1.2.0
       '@rollup/pluginutils': 4.2.1
       preact: 10.18.2
-      vite: 4.5.0(@types/node@20.8.10)
+      vite: 4.5.0(@types/node@20.9.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1902,6 +1899,7 @@ packages:
   /@quilted/events@2.0.0:
     resolution: {integrity: sha512-0Q5w7jgHPj3nD8sTh1o7oa7LFxATK+dH0i4p8Y6BgKBLDOkr9/m01IDUXsbZdZ98XvxQaVkxBF/HUNAFfg/KfA==}
     engines: {node: '>=14.0.0'}
+    dev: false
 
   /@quilted/graphql@3.0.1:
     resolution: {integrity: sha512-RiceUjn9f78WfhvBMHIr7IU2KNr0syZ5nB3YYdNkn7nPoF8I+uDtR5PDqTEfJyybVmc4FWAg17oNzBjK8ZplXQ==}
@@ -1987,6 +1985,7 @@ packages:
         optional: true
     dependencies:
       '@quilted/events': 2.0.0
+    dev: false
 
   /@quilted/typescript@0.2.21(typescript@5.2.2):
     resolution: {integrity: sha512-ZDHDpXkIEFZXOWnaqlqhm3iy/65VAE6zWr/DQW8ceu3EdLIPmwJxDG2YH6KhznoScaObIzm9rbkmFV9H6eQ0Iw==}
@@ -2011,7 +2010,7 @@ packages:
       '@prefresh/vite': 2.4.3(preact@10.18.2)(vite@4.5.0)
       '@quilted/request-router': 0.2.0
       '@quilted/rollup': 0.2.6(@babel/template@7.22.15)(rollup@4.3.0)
-      vite: 4.5.0(@types/node@20.8.10)
+      vite: 4.5.0(@types/node@20.9.0)
       vitest: 0.34.6
     transitivePeerDependencies:
       - '@babel/template'
@@ -2263,8 +2262,8 @@ packages:
     resolution: {integrity: sha512-2JwWnHK9H+wUZNorf2Zr6ves96WHoWDJIftkcxPKsS7Djta6Zu519LarhRNljPXkpsZR2ZMwNCPeW7omW07BJw==}
     dev: true
 
-  /@types/node@20.8.10:
-    resolution: {integrity: sha512-TlgT8JntpcbmKUFzjhsyhGfP2fsiz1Mv56im6enJ905xG1DAYesxJaeSbGqQmAw8OWPdhyJGhGSQGKRNJ45u9w==}
+  /@types/node@20.9.0:
+    resolution: {integrity: sha512-nekiGu2NDb1BcVofVcEKMIwzlx4NjHlcjhoxxKBNLtz15Y1z7MYf549DFvkHSId02Ax6kGwWntIBPC3l/JZcmw==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -3631,7 +3630,7 @@ packages:
       picocolors: 1.0.0
     dev: true
 
-  /vite-node@0.34.6(@types/node@20.8.10):
+  /vite-node@0.34.6(@types/node@20.9.0):
     resolution: {integrity: sha512-nlBMJ9x6n7/Amaz6F3zJ97EBwR2FkzhBRxF5e+jE6LA3yi6Wtc2lyTij1OnDMIr34v5g/tVQtsVAzhT0jc5ygA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -3641,7 +3640,7 @@ packages:
       mlly: 1.4.2
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 4.5.0(@types/node@20.8.10)
+      vite: 4.5.0(@types/node@20.9.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3653,7 +3652,7 @@ packages:
       - terser
     dev: true
 
-  /vite@4.5.0(@types/node@20.8.10):
+  /vite@4.5.0(@types/node@20.9.0):
     resolution: {integrity: sha512-ulr8rNLA6rkyFAlVWw2q5YJ91v098AFQ2R0PRFwPzREXOUJQPtFUG0t+/ZikhaOCDqFoDhN6/v8Sq0o4araFAw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -3681,7 +3680,7 @@ packages:
       terser:
         optional: true
     dependencies:
-      '@types/node': 20.8.10
+      '@types/node': 20.9.0
       esbuild: 0.18.20
       postcss: 8.4.31
       rollup: 3.29.4
@@ -3722,7 +3721,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.9
       '@types/chai-subset': 1.3.4
-      '@types/node': 20.8.10
+      '@types/node': 20.9.0
       '@vitest/expect': 0.34.6
       '@vitest/runner': 0.34.6
       '@vitest/snapshot': 0.34.6
@@ -3741,8 +3740,8 @@ packages:
       strip-literal: 1.3.0
       tinybench: 2.5.1
       tinypool: 0.7.0
-      vite: 4.5.0(@types/node@20.8.10)
-      vite-node: 0.34.6(@types/node@20.8.10)
+      vite: 4.5.0(@types/node@20.9.0)
+      vite-node: 0.34.6(@types/node@20.9.0)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less

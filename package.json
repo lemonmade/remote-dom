@@ -1,5 +1,5 @@
 {
-  "name": "remote-dom",
+  "name": "@lemonmade/remote-dom-workspace",
   "type": "module",
   "version": "0.0.0",
   "private": true,
@@ -16,6 +16,7 @@
     "@quilted/rollup": "^0.2.6",
     "@quilted/typescript": "^0.2.21",
     "@quilted/vite": "^0.1.5",
+    "@types/node": "^20.9.0",
     "prettier": "^3.0.0",
     "rollup": "^4.1.0",
     "tsx": "^3.14.0",

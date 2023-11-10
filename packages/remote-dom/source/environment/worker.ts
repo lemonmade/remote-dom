@@ -7,8 +7,6 @@ import type {Renderer} from '../types.ts';
 
 export interface WorkerEnvironmentOptions {}
 
-customElements.define('remote-root', RemoteRootElement);
-
 declare global {
   interface HTMLElementTagNameMap {
     'remote-root': InstanceType<typeof RemoteRootElement>;
@@ -19,6 +17,11 @@ export async function createWorkerEnvironment(
   _: WorkerEnvironmentOptions = {},
 ) {
   const thread = createThreadFromWebWorker<{}, Renderer>(self as any);
+
+  if (customElements.get('remote-root') == null) {
+    customElements.define('remote-root', RemoteRootElement);
+  }
+
   const element = document.createElement('remote-root');
 
   await thread.accept((callback) => {

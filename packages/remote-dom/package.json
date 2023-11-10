@@ -6,7 +6,7 @@
     "access": "public",
     "@lemonmade/registry": "https://registry.npmjs.org"
   },
-  "version": "0.0.0",
+  "version": "0.1.0",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -28,17 +28,23 @@
       "quilt:esnext": "./build/esnext/elements.esnext",
       "import": "./build/esm/elements.mjs"
     },
-    "./environments/iframe": {
-      "types": "./build/typescript/environments/iframe.d.ts",
-      "quilt:source": "./source/environments/iframe.ts",
-      "quilt:esnext": "./build/esnext/environments/iframe.esnext",
-      "import": "./build/esm/environments/iframe.mjs"
+    "./environment/iframe": {
+      "types": "./build/typescript/environment/iframe.d.ts",
+      "quilt:source": "./source/environment/iframe.ts",
+      "quilt:esnext": "./build/esnext/environment/iframe.esnext",
+      "import": "./build/esm/environment/iframe.mjs"
     },
-    "./environments/worker": {
-      "types": "./build/typescript/environments/worker.d.ts",
-      "quilt:source": "./source/environments/worker.ts",
-      "quilt:esnext": "./build/esnext/environments/worker.esnext",
-      "import": "./build/esm/environments/worker.mjs"
+    "./environment/worker": {
+      "types": "./build/typescript/environment/worker.d.ts",
+      "quilt:source": "./source/environment/worker.ts",
+      "quilt:esnext": "./build/esnext/environment/worker.esnext",
+      "import": "./build/esm/environment/worker.mjs"
+    },
+    "./environment/worker-classic": {
+      "types": "./build/typescript/environment/worker-classic.d.ts",
+      "quilt:source": "./source/environment/worker-classic.ts",
+      "quilt:esnext": "./build/esnext/environment/worker-classic.esnext",
+      "import": "./build/esm/environment/worker-classic.mjs"
     }
   },
   "types": "./build/typescript/index.d.ts",
@@ -47,11 +53,14 @@
       "elements": [
         "./build/typescript/elements.d.ts"
       ],
-      "environments/iframe": [
-        "./build/typescript/environments/iframe.d.ts"
+      "environment/iframe": [
+        "./build/typescript/environment/iframe.d.ts"
       ],
-      "environments/worker": [
-        "./build/typescript/environments/worker.d.ts"
+      "environment/worker": [
+        "./build/typescript/environment/worker.d.ts"
+      ],
+      "environment/worker-classic": [
+        "./build/typescript/environment/worker-classic.d.ts"
       ]
     }
   },

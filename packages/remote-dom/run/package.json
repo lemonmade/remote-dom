@@ -1,0 +1,17 @@
+{
+  "name": "@lemonmade/remote-dom-run",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "rollup --config ./rollup.config.js",
+    "develop": "vite --config ./vite.config.js",
+    "deploy": "tsx ./scripts/deploy.ts"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ],
+  "devDependencies": {
+    "@lemonmade/remote-dom": "workspace:*"
+  }
+}
