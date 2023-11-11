@@ -6,12 +6,14 @@
   "scripts": {
     "build": "rollup --config ./rollup.config.js",
     "develop": "vite --config ./vite.config.js",
-    "deploy": "tsx ./scripts/deploy.ts"
+    "deploy": "tsx ./scripts/deploy.ts && wrangler deploy"
   },
   "browserslist": [
     "defaults and fully supports es6-module"
   ],
   "devDependencies": {
-    "@lemonmade/remote-dom": "workspace:*"
+    "@cloudflare/workers-types": "^4.20231025.0",
+    "@lemonmade/remote-dom": "workspace:*",
+    "wrangler": "^3.15.0"
   }
 }

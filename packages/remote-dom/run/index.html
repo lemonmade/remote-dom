@@ -7,6 +7,41 @@
     <remote-dom-iframe src="./develop/iframe.html"></remote-dom-iframe>
     <remote-dom-worker src="./develop/worker.ts"></remote-dom-worker>
     <script type="module" src="./source/element/remote-dom-iframe.ts"></script>
+    <!-- <script
+      type="module"
+      src="https://remote-dom.io/run/element/remote-dom-iframe.js"
+    ></script> -->
     <script type="module" src="./source/element/remote-dom-worker.ts"></script>
+    <!-- <script
+      type="module"
+      src="https://remote-dom.io/run/element/remote-dom-worker.js"
+    ></script> -->
+
+    <script>
+      class UIButton extends HTMLElement {
+        static get observedAttributes() {
+          return ['emphasis'];
+        }
+
+        onPress;
+
+        connectedCallback() {
+          const shadow = this.attachShadow({mode: 'open'});
+          const button = document.createElement('button');
+          const el = this;
+          button.addEventListener('click', () => {
+            el.onPress?.({el: 'YES!'});
+          });
+          button.append(document.createElement('slot'));
+          shadow.append(button);
+        }
+
+        attributeChangedCallback() {
+          console.log('attributeChangedCallback', ...arguments);
+        }
+      }
+
+      customElements.define('ui-button', UIButton);
+    </script>
   </body>
 </html>

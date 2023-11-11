@@ -1,0 +1,12 @@
+name = "remote-dom-run"
+main = "./build/cloudflare/worker.js"
+compatibility_date = "2023-11-10"
+
+[[routes]]
+pattern = "remote-dom.io"
+custom_domain = true
+
+# @see https://developers.cloudflare.com/r2/api/workers/workers-api-usage/
+[[r2_buckets]]
+binding = "RUN_ASSETS"
+bucket_name = "remote-dom-run"

@@ -3,6 +3,11 @@
   <head>
     <title>Remote DOM Development</title>
     <script type="module" src="/source/environment/iframe.ts"></script>
+    <!-- <script
+      type="module"
+      src="https://remote-dom.io/run/environment/iframe.js"
+    ></script> -->
+    <script type="module" src="./elements.ts"></script>
     <script type="module">
       const countElement = document.querySelector('span');
       let count = Number.parseInt(countElement.textContent, 10);
@@ -17,10 +22,16 @@
           countElement.removeAttribute('style');
         }
       }, 1000);
+
+      // document.querySelector('ui-button').onPress = console.log;
+      document.querySelector('ui-button').addEventListener('press', (event) => {
+        console.log(event);
+      });
     </script>
   </head>
   <body>
     Hello world, from an iframe! count:
     <span class="foobar" style="color: red">0</span>
+    <ui-button emphasis="true">Do it!</ui-button>
   </body>
 </html>

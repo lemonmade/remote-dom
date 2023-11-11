@@ -1,11 +1,15 @@
 import {quiltModule} from '@quilted/rollup';
 
-const [esmoduleOptions, classicWorkerOptions] = await Promise.all([
-  createESModuleOptions(),
-  createClassicWorkerOptions(),
-]);
+const [esmoduleOptions, classicWorkerOptions, cloudflareWorkerOptions] =
+  await Promise.all([
+    createESModuleOptions(),
+    createClassicWorkerOptions(),
+    createCloudflareWorkerOptions(),
+  ]);
 
-export default [esmoduleOptions, classicWorkerOptions];
+export default [esmoduleOptions, classicWorkerOptions, cloudflareWorkerOptions];
+
+const POLYFILL_REGEX = /@lemonmade[/]remote-ui[/].*\bpolyfill\b/;
 
 async function createESModuleOptions() {
   const options = await quiltModule({
@@ -16,11 +20,15 @@ async function createESModuleOptions() {
       'environment/worker': './source/environment/worker.ts',
     },
     assets: {
-      minify: false,
+      minify: true,
     },
   });
 
   options.output.manualChunks = (id, {getModuleInfo}) => {
+    if (POLYFILL_REGEX.test(id)) {
+      return 'polyfill';
+    }
+
     const moduleInfo = getModuleInfo(id);
 
     if (moduleInfo == null) return null;
@@ -49,12 +57,28 @@ async function createClassicWorkerOptions() {
       'environment/worker-classic': './source/environment/worker-classic.ts',
     },
     assets: {
-      minify: false,
       clean: false,
+      minify: true,
     },
   });
 
   options.output.format = 'iife';
+
+  return options;
+}
+
+async function createCloudflareWorkerOptions() {
+  const options = await quiltModule({
+    entry: {
+      worker: './source/server.ts',
+    },
+    assets: {
+      clean: false,
+      minify: false,
+    },
+  });
+
+  options.output.dir = 'build/cloudflare';
 
   return options;
 }

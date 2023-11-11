@@ -1,4 +1,7 @@
 import {root} from '../source/environment/worker.ts';
+// import {root} from 'https://remote-dom.io/run/environment/worker.js';
+
+import './elements.ts';
 
 let count = 0;
 const countText = document.createTextNode(String(count));
