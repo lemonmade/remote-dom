@@ -10,14 +10,17 @@
       setInterval(() => {
         count += 1;
         countElement.textContent = String(count);
-        countElement.setAttribute(
-          'style',
-          `color: ${count % 2 === 0 ? 'red' : 'green'}`,
-        );
+
+        if (count % 2 === 0) {
+          countElement.setAttribute('style', 'color: red');
+        } else {
+          countElement.removeAttribute('style');
+        }
       }, 1000);
     </script>
   </head>
   <body>
-    Hello world, from an iframe! count: <span style="color: red">0</span>
+    Hello world, from an iframe! count:
+    <span class="foobar" style="color: red">0</span>
   </body>
 </html>

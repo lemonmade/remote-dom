@@ -80,7 +80,7 @@
     }
   },
   "devDependencies": {
-    "@lemonmade/remote-ui": "^0.3.2"
+    "@lemonmade/remote-ui": "^0.3.3"
   },
   "browserslist": [
     "defaults and fully supports es6-module",

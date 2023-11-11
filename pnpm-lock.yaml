@@ -9,14 +9,14 @@ importers:
   .:
     devDependencies:
       '@quilted/rollup':
-        specifier: ^0.2.6
-        version: 0.2.6(@babel/template@7.22.15)(rollup@4.3.0)
+        specifier: ^0.2.7
+        version: 0.2.7(@babel/template@7.22.15)(rollup@4.3.0)
       '@quilted/typescript':
         specifier: ^0.2.21
         version: 0.2.21(typescript@5.2.2)
       '@quilted/vite':
-        specifier: ^0.1.5
-        version: 0.1.5(@babel/template@7.22.15)(preact@10.18.2)(rollup@4.3.0)(vite@4.5.0)(vitest@0.34.6)
+        specifier: ^0.1.6
+        version: 0.1.6(@babel/template@7.22.15)(preact@10.18.2)(rollup@4.3.0)(vite@4.5.0)(vitest@0.34.6)
       '@types/node':
         specifier: ^20.9.0
         version: 20.9.0
@@ -46,8 +46,8 @@ importers:
         version: 2.0.0
     devDependencies:
       '@lemonmade/remote-ui':
-        specifier: ^0.3.2
-        version: 0.3.2(preact@10.18.2)
+        specifier: ^0.3.3
+        version: 0.3.3(preact@10.18.2)
 
   packages/remote-dom/run:
     devDependencies:
@@ -1812,8 +1812,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
 
-  /@lemonmade/remote-ui@0.3.2(preact@10.18.2):
-    resolution: {integrity: sha512-OQJZrBVZo5FhyTa8PYg0iq1zE6E4RUsCptra7h9K7pG12p8tk0zAjEOivarKaCSZANuyuJS29MRrFrlYc4Xgzw==}
+  /@lemonmade/remote-ui@0.3.3(preact@10.18.2):
+    resolution: {integrity: sha512-iR7SeKdRtes3uApLStQ2cjr6Dj3SPzdDiKp7qMdp+tJ1qyy0cvHOWPm4Hl/ld7vJphMQUjzz/USHGHAmrzVQAg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       '@preact/signals-core': ^1.3.0
@@ -1872,8 +1872,8 @@ packages:
       - supports-color
     dev: true
 
-  /@quilted/assets@0.1.0:
-    resolution: {integrity: sha512-QLDCOtzGAxoK64c5zSn441QHYf2XWGHjXuNMzpaWyWLMumWGFlS6RdyfoKoTVRefeizDqwIfeETCCKFzRxQL0A==}
+  /@quilted/assets@0.1.1:
+    resolution: {integrity: sha512-1Ko59wD1LfF/B6aWZWmITTS48+qMdNZRldFp9mMw0pDUwwgJ/wT3vies9OpQKKt6SvypMfUDPQubKLu1XGClRg==}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -1923,8 +1923,8 @@ packages:
       - supports-color
     dev: true
 
-  /@quilted/rollup@0.2.6(@babel/template@7.22.15)(rollup@4.3.0):
-    resolution: {integrity: sha512-cgtNfqO4MrFhgKFbA6cgdyUoNuK1DhsTuGt6v4MwdgzDTrTo9fqbuZwvacu5eknkzd6eoz3q00fSrNWGLrdE+A==}
+  /@quilted/rollup@0.2.7(@babel/template@7.22.15)(rollup@4.3.0):
+    resolution: {integrity: sha512-Wm6/oynw9x8sA0aUhIkcLMhAm8p9JBDDBCFtR+E+t/wYYKmQJ2crlqnL/DFrGdYD8/paE4j3N6+tkV8mngg5/A==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^4.0.0
@@ -1937,7 +1937,7 @@ packages:
       '@babel/preset-react': 7.22.15(@babel/core@7.23.2)
       '@babel/preset-typescript': 7.23.2(@babel/core@7.23.2)
       '@mdn/browser-compat-data': 5.3.28
-      '@quilted/assets': 0.1.0
+      '@quilted/assets': 0.1.1
       '@quilted/babel': 0.2.0(@babel/core@7.23.2)(@babel/template@7.22.15)
       '@quilted/graphql': 3.0.1
       '@rollup/plugin-alias': 5.0.1(rollup@4.3.0)
@@ -1995,8 +1995,8 @@ packages:
       typescript: 5.2.2
     dev: true
 
-  /@quilted/vite@0.1.5(@babel/template@7.22.15)(preact@10.18.2)(rollup@4.3.0)(vite@4.5.0)(vitest@0.34.6):
-    resolution: {integrity: sha512-WiST6/W07Jo+rjrFIv4Q7w0nL3zqPiqhzxsu6c4EzhcQTFIdtz5sXFTd7Ys4PrKJhJ5zzjg9Csjp2kb1PVLW8w==}
+  /@quilted/vite@0.1.6(@babel/template@7.22.15)(preact@10.18.2)(rollup@4.3.0)(vite@4.5.0)(vitest@0.34.6):
+    resolution: {integrity: sha512-WZyIfE89zOuMVC2dcuXFCM/auW94vORGM3D6E3aaDDRD0sPyZDRYmGuqCoEpqz478EcexwAeM7ZW1G0X7Lu5cA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       vite: ^4.5.0
@@ -2009,7 +2009,7 @@ packages:
     dependencies:
       '@prefresh/vite': 2.4.3(preact@10.18.2)(vite@4.5.0)
       '@quilted/request-router': 0.2.0
-      '@quilted/rollup': 0.2.6(@babel/template@7.22.15)(rollup@4.3.0)
+      '@quilted/rollup': 0.2.7(@babel/template@7.22.15)(rollup@4.3.0)
       vite: 4.5.0(@types/node@20.9.0)
       vitest: 0.34.6
     transitivePeerDependencies:
