@@ -1,0 +1,35 @@
+name: Preview versions
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - changeset-release/main
+
+jobs:
+  preview:
+    name: Preview 🔮
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/workflows/actions/prepare
+
+      # Changeset entries are consumed on this branch. We need to reset the
+      # changeset files so that the snapshot command knows the correct packages,
+      # and does not accidentally publish the new, non-preview version numbers
+      # prematurely.
+      - name: Reset changeset entries
+        run: |
+          git fetch origin main
+          git checkout origin/main -- .changeset
+
+      - uses: ./.github/workflows/actions/type-check-with-cache
+      - run: pnpm run build
+      - name: Deploy preview versions to NPM
+        run: |
+          pnpm changeset version --snapshot preview
+          pnpm changeset publish --tag preview --no-git-tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASES_GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

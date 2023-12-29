@@ -5,15 +5,18 @@
   "private": true,
   "scripts": {
     "build": "pnpm -r run build",
+    "deploy": "pnpm -r run deploy",
     "develop": "pnpm --filter @lemonmade/remote-dom-run run develop",
     "format": "prettier --write --cache .",
     "lint": "prettier --check --cache .",
-    "test": "vitest",
+    "test": "vitest --passWithNoTests",
     "type-check": "tsc --build --pretty",
-    "typescript:run": "tsx --conditions quilt:source",
-    "typescript:watch": "tsx watch --conditions quilt:source"
+    "typescript.run": "tsx --conditions quilt:source",
+    "typescript.watch": "tsx watch --conditions quilt:source"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.4.7",
+    "@changesets/cli": "^2.25.0",
     "@quilted/rollup": "^0.2.20",
     "@quilted/typescript": "^0.3.0",
     "@quilted/vite": "^0.1.16",

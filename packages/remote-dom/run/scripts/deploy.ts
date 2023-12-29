@@ -44,7 +44,7 @@ async function syncToR2({version}: {version?: string} = {}) {
     's3',
     'sync',
     '--delete',
-    fileURLToPath(new URL('./build/assets/', root)),
+    fileURLToPath(new URL('./build/output/', root)),
     `s3://remote-dom-run${pathname}`,
     '--endpoint-url',
     endpoint,
