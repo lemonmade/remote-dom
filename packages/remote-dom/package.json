@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<USER>/<REPOSITORY>",
+    "url": "https://github.com/lemonmade/remote-dom",
     "directory": "packages/remote-dom"
   },
   "exports": {
@@ -72,7 +72,7 @@
     "@quilted/threads": "^2.0.0"
   },
   "peerDependencies": {
-    "@lemonmade/remote-ui": "^0.3.2"
+    "@lemonmade/remote-ui": "^0.3.4"
   },
   "peerDependenciesMeta": {
     "@lemonmade/remote-ui": {
@@ -80,7 +80,7 @@
     }
   },
   "devDependencies": {
-    "@lemonmade/remote-ui": "^0.3.3"
+    "@lemonmade/remote-ui": "^0.3.4"
   },
   "browserslist": [
     "defaults and fully supports es6-module",

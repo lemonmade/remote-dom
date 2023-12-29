@@ -1,7 +1,7 @@
 import {retain, createThreadFromInsideIframe} from '@quilted/threads';
 import {RemoteMutationObserver} from '@lemonmade/remote-ui/elements';
 
-import type {Renderer} from '../types.ts';
+import type {RemoteEnvironment} from '../types.ts';
 
 export interface IframeEnvironmentOptions {
   root?: Element | string;
@@ -10,8 +10,6 @@ export interface IframeEnvironmentOptions {
 export async function createIframeEnvironment({
   root,
 }: IframeEnvironmentOptions = {}) {
-  const thread = createThreadFromInsideIframe<{}, Renderer>();
-
   const element = root
     ? typeof root === 'string'
       ? document.querySelector(root)
@@ -24,12 +22,15 @@ export async function createIframeEnvironment({
     );
   }
 
-  await thread.accept((callback) => {
-    retain(callback);
-
-    const observer = new RemoteMutationObserver(callback);
-    observer.observe(element);
+  const thread = createThreadFromInsideIframe<RemoteEnvironment>({
+    expose: {
+      connect(callback) {
+        retain(callback);
+        const observer = new RemoteMutationObserver(callback);
+        observer.observe(element);
+      },
+    },
   });
 
-  return {element};
+  return {element, thread};
 }
