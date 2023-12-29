@@ -1,7 +1,7 @@
-import type {RemoteMutationCallback} from '@lemonmade/remote-ui';
+import type {RemoteConnection} from '@lemonmade/remote-ui';
 
 export type {Thread} from '@quilted/threads';
 
 export interface RemoteEnvironment {
-  connect(callback: RemoteMutationCallback): void;
+  connect(connection: RemoteConnection): void;
 }

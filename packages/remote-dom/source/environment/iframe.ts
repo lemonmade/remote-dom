@@ -24,9 +24,9 @@ export async function createIframeEnvironment({
 
   const thread = createThreadFromInsideIframe<RemoteEnvironment>({
     expose: {
-      connect(callback) {
-        retain(callback);
-        const observer = new RemoteMutationObserver(callback);
+      connect(connection) {
+        retain(connection);
+        const observer = new RemoteMutationObserver(connection);
         observer.observe(element);
       },
     },

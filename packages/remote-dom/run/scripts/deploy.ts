@@ -1,6 +1,8 @@
 import {spawnSync} from 'child_process';
 import {fileURLToPath} from 'url';
 
+// @ts-ignore Not sure how to do this properly, I don’t want to include
+// package.json in the types for the containing package...
 import {version} from '../../package.json' assert {type: 'json'};
 
 const endpoint = process.env.R2_URL!;

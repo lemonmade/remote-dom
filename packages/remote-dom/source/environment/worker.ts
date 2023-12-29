@@ -24,9 +24,9 @@ export async function createWorkerEnvironment(
 
   const thread = createThreadFromWebWorker<RemoteEnvironment>(self as any, {
     expose: {
-      connect(callback) {
-        retain(callback);
-        element.connect(callback);
+      connect(connection) {
+        retain(connection);
+        element.connect(connection);
       },
     },
   });
