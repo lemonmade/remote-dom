@@ -30,14 +30,10 @@
           const button = document.createElement('button');
           const el = this;
           button.addEventListener('click', () => {
-            el.onPress?.({el: 'YES!'});
+            el.onPress?.();
           });
           button.append(document.createElement('slot'));
           shadow.append(button);
-        }
-
-        attributeChangedCallback() {
-          console.log('attributeChangedCallback', ...arguments);
         }
       }
 
