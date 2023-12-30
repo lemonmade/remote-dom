@@ -66,8 +66,7 @@
   },
   "sideEffects": false,
   "scripts": {
-    "build": "rollup --config ./rollup.config.js",
-    "deploy": "pnpm publish"
+    "build": "rollup --config ./rollup.config.js"
   },
   "dependencies": {
     "@quilted/threads": "^2.0.0"

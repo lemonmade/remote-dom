@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "pnpm -r run build",
-    "deploy": "pnpm -r run deploy",
+    "deploy": "pnpm -r publish && pnpm -r run deploy",
     "develop": "pnpm --filter @lemonmade/remote-dom-run run develop",
     "format": "prettier --write --cache .",
     "lint": "prettier --check --cache .",
