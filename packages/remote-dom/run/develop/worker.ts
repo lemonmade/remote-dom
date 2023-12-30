@@ -1,6 +1,6 @@
 import {root} from '../source/environment/worker.ts';
-import {updateRemoteElementProperty} from '@lemonmade/remote-ui/elements';
 // import {root} from 'https://remote-dom.io/run/environment/worker.js';
+import {updateRemoteElementProperty} from '@lemonmade/remote-ui/elements';
 
 import './elements.ts';
 
