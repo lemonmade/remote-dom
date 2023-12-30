@@ -11,14 +11,15 @@ async function handleRequest(request: Request, env: Env) {
 
   const object = await env.RUN_ASSETS.get(url.pathname.slice(1));
 
-  if (object?.body == null) {
-    return new Response(null, {status: 404});
-  }
-
   const headers = new Headers({
     'Access-Control-Allow-Origin': '*',
     'Timing-Allow-Origin': '*',
   });
+
+  if (object?.body == null) {
+    return new Response(null, {status: 404, headers});
+  }
+
   object.writeHttpMetadata(headers as any);
   headers.set('etag', object.httpEtag);
 
